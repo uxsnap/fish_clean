@@ -64,6 +64,60 @@ const cards = [
   },
 ];
 
+const links = [
+  {
+    link: "mailto:evgeniy.agafonov98@gmail.com",
+    text: "Наш Email",
+    Icon: (
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 512 512"
+        height="24px"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M424 80H88a56.06 56.06 0 0 0-56 56v240a56.06 56.06 0 0 0 56 56h336a56.06 56.06 0 0 0 56-56V136a56.06 56.06 0 0 0-56-56zm-14.18 92.63-144 112a16 16 0 0 1-19.64 0l-144-112a16 16 0 1 1 19.64-25.26L256 251.73l134.18-104.36a16 16 0 0 1 19.64 25.26z"></path>
+      </svg>
+    ),
+  },
+  {
+    link: "https://t.me/here_it_goes",
+    text: "Наш телеграм",
+    Icon: (
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 496 512"
+        height="24px"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path>
+      </svg>
+    ),
+  },
+  {
+    link: "https://www.linkedin.com/in/eugene-agafonov-6295881b2",
+    text: "Наш LinkedIn",
+    Icon: (
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 448 512"
+        height="24px"
+        width="24px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
+      </svg>
+    ),
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -166,9 +220,57 @@ export default function Home() {
           </div>
 
           <div id="video"></div>
-
-          <div id="contacts"></div>
         </main>
+        <div
+          style={{
+            color: "white",
+            marginTop: 40,
+            background: "rgba(8, 49, 55, .9)",
+          }}
+          id="contacts"
+        >
+          <div
+            style={{
+              padding: "40px",
+              maxWidth: 1200,
+              margin: "0 auto",
+            }}
+          >
+            <h1
+              style={{
+                textShadow:
+                  "2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;",
+              }}
+            >
+              Контакты
+            </h1>
+
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 30,
+                fontSize: 24,
+                marginTop: 20,
+              }}
+            >
+              {links.map((link) => (
+                <a
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 12,
+                  }}
+                  key={link.link}
+                  href={link.link}
+                >
+                  {link.Icon}
+                  <span>{link.text}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
