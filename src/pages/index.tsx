@@ -128,7 +128,7 @@ export default function Home() {
       </Head>
 
       <div className={roboto.className}>
-        <div style={{ position: "fixed", top: 0, width: "100%" }}>
+        <div style={{ position: "fixed", top: 0, width: "100%", zIndex: 100 }}>
           <Header />
         </div>
 
@@ -219,8 +219,40 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="video"></div>
+          <div
+            style={{
+              color: "white",
+              padding: "0 40px",
+            }}
+            id="video"
+          >
+            <h1
+              style={{
+                textShadow:
+                  "2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;",
+              }}
+            >
+              Рекламный ролик
+            </h1>
+
+            <div style={{ marginTop: 20 }}>
+              <video
+                style={{ objectFit: "fill" }}
+                width="100%"
+                height="100%"
+                controls
+                preload="none"
+              >
+                <source
+                  media="(min-width: 800px)"
+                  type="video/mp4"
+                  src="final_video.mp4"
+                />
+              </video>
+            </div>
+          </div>
         </main>
+
         <div
           style={{
             color: "white",
@@ -268,6 +300,11 @@ export default function Home() {
                   <span>{link.text}</span>
                 </a>
               ))}
+            </div>
+
+            <div style={{ marginTop: 20 }}>
+              <span>Тел.</span>
+              <span>8 (911) 461-43-68</span>
             </div>
           </div>
         </div>
